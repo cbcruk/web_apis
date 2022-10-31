@@ -1,4 +1,5 @@
 import { createElement, lazy, Suspense } from 'react'
+import { Resources } from './components/Resources'
 
 const modules = import.meta.glob('./scratch/*.tsx')
 const components = Object.entries(modules).map(([, value]) =>
@@ -11,10 +12,13 @@ function App() {
       <div className="flex flex-wrap gap-4">
         <Suspense fallback={null}>
           {components.map((component, index) => {
-            return createElement(component, { key: index })
+            return createElement(component, {
+              key: index,
+            })
           })}
         </Suspense>
       </div>
+      <Resources />
     </div>
   )
 }

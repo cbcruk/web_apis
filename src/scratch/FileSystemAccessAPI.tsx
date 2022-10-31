@@ -1,8 +1,7 @@
-import { Button, Card, Dialog, useDialog } from '../components'
+import { Button, Card } from '../components'
+import { openDialog } from '../components/Resources'
 
 function FileSystemAccessAPI() {
-  const { modalRef } = useDialog()
-
   return (
     <>
       <Card
@@ -14,7 +13,9 @@ function FileSystemAccessAPI() {
         <Button
           icon="list_alt"
           onClick={() => {
-            modalRef.current && modalRef.current.show()
+            openDialog(
+              `- [The File System Access API: simplifying access to local files](https://web.dev/native-file-system/)`
+            )
           }}
         />
         <Button
@@ -25,12 +26,6 @@ function FileSystemAccessAPI() {
           }}
         />
       </Card>
-      <Dialog ref={modalRef}>
-        <p className="border-t border-gray-400 pt-2 mt-2 font-mono text-[10px]">
-          - [The File System Access API: simplifying access to local
-          files](https://web.dev/native-file-system/)
-        </p>
-      </Dialog>
     </>
   )
 }

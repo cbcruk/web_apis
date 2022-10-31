@@ -1,8 +1,7 @@
-import { Button, Card, Dialog, useDialog } from '../components'
+import { Button, Card } from '../components'
+import { openDialog } from '../components/Resources'
 
 function PerformanceAPI() {
-  const { modalRef } = useDialog()
-
   return (
     <>
       <Card
@@ -14,16 +13,11 @@ function PerformanceAPI() {
         <Button
           icon="list_alt"
           onClick={() => {
-            modalRef.current && modalRef.current.show()
+            openDialog(`- [How to Get Started With the JavaScript Performance API |
+              DigitalOcean](https://alligator.io/js/js-performance-api/)`)
           }}
         />
       </Card>
-      <Dialog ref={modalRef}>
-        <p className="border-t border-gray-400 pt-2 mt-2 font-mono text-[10px]">
-          - [How to Get Started With the JavaScript Performance API |
-          DigitalOcean](https://alligator.io/js/js-performance-api/)
-        </p>
-      </Dialog>
     </>
   )
 }
