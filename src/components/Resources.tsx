@@ -15,7 +15,7 @@ export function Resources() {
 
   return (
     <Dialog onClose={() => (message.value = '')}>
-      <p className="border-t border-gray-400 pt-2 mt-2 font-mono text-[10px]">
+      <p className="border-t border-gray-400 pt-2 mt-2 font-mono text-[10px] whitespace-pre-line">
         {message.value}
       </p>
     </Dialog>
