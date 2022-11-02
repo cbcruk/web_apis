@@ -1,27 +1,19 @@
-import { useEffect } from 'react'
-import { message } from '../signals/dialog'
+import { useAtom } from 'jotai'
+import { dialogAtom } from '../atoms/dialog'
 import { Dialog } from './Dialog'
 
 export function Resources() {
-  useEffect(() => {
-    return () => {
-      message.value = ''
-    }
-  }, [])
+  const [dialog, setDialog] = useAtom(dialogAtom)
 
-  if (!message.value) {
+  if (!dialog.message) {
     return null
   }
 
   return (
-    <Dialog onClose={() => (message.value = '')}>
+    <Dialog onClose={() => setDialog(prev => ({ ...prev, message: '' }))}>
       <p className="border-t border-gray-400 pt-2 mt-2 font-mono text-[10px] whitespace-pre-line">
-        {message.value}
+        {dialog.message}
       </p>
     </Dialog>
   )
-}
-
-export function openDialog(value: string) {
-  message.value = value
 }

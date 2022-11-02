@@ -1,7 +1,9 @@
+import { useDialog } from '../atoms/dialog'
 import { Button, Card } from '../components'
-import { openDialog } from '../components/Resources'
 
 function FileSystemAccessAPI() {
+  const { openDialog } = useDialog()
+
   return (
     <>
       <Card
