@@ -8,11 +8,21 @@ export type Props = {
   icon: string
 } & JSX.IntrinsicElements['div']
 
+function random(max: number, min: number) {
+  return Math.random() * (max - min) + min
+}
+
 export function Card({ icon, link, color, title, className, children }: Props) {
   const bg = `bg-${color}-600`
 
   return (
-    <div className={clsx(['p-4 rounded-xl text-sm', bg, className])}>
+    <div
+      className={clsx(['p-4 rounded-xl text-sm', bg, className])}
+      style={{
+        backgroundColor: `hsl(${random(360, 0)}deg 53% 62%)`,
+        backgroundBlendMode: 'screen',
+      }}
+    >
       <Icon className="text-black text-lg">{icon}</Icon>
       <CardTitle href={link}>{title}</CardTitle>
       <CardBody>{children}</CardBody>
