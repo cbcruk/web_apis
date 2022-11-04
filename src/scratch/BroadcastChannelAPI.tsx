@@ -1,9 +1,6 @@
-import { useDialog } from '../atoms/dialog'
-import { Button, Card } from '../components'
+import { Card, DialogTrigger } from '../components'
 
 function BroadcastChannelAPI() {
-  const { openDialog } = useDialog()
-
   return (
     <Card
       icon="broadcast_on_home"
@@ -11,13 +8,8 @@ function BroadcastChannelAPI() {
       link="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API"
       color="sky"
     >
-      <Button
-        icon="list_alt"
-        onClick={() => {
-          openDialog(
-            `- [How to use the BroadcastChannel API in JavaScript | DigitalOcean](https://alligator.io/js/broadcastchannel-api/)`
-          )
-        }}
+      <DialogTrigger
+        message={`- [How to use the BroadcastChannel API in JavaScript | DigitalOcean](https://alligator.io/js/broadcastchannel-api/)`}
       />
     </Card>
   )

@@ -1,9 +1,6 @@
-import { useDialog } from '../atoms/dialog'
-import { Button, Card } from '../components'
+import { Card, DialogTrigger } from '../components'
 
 function PerformanceAPI() {
-  const { openDialog } = useDialog()
-
   return (
     <>
       <Card
@@ -12,12 +9,8 @@ function PerformanceAPI() {
         link="https://developer.mozilla.org/en-US/docs/Web/API/Performance"
         color="purple"
       >
-        <Button
-          icon="list_alt"
-          onClick={() => {
-            openDialog(`- [How to Get Started With the JavaScript Performance API |
-              DigitalOcean](https://alligator.io/js/js-performance-api/)`)
-          }}
+        <DialogTrigger
+          message={`- [How to Get Started With the JavaScript Performance API | DigitalOcean](https://alligator.io/js/js-performance-api/)`}
         />
       </Card>
     </>
