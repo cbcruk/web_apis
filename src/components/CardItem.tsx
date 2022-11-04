@@ -6,7 +6,7 @@ type Props = DialogTriggerProps & CardProps
 export function CardItem({ message, children, ...props }: Props) {
   return (
     <Card {...props}>
-      <DialogTrigger {...{ message }} />
+      {message && <DialogTrigger {...{ message }} />}
       {children}
     </Card>
   )
