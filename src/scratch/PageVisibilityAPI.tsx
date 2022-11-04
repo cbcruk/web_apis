@@ -1,5 +1,4 @@
-import { Button, Card } from '../components'
-import { openDialog } from '../components/Resources'
+import { Card, DialogTrigger } from '../components'
 
 function PageVisibilityAPI() {
   return (
@@ -9,13 +8,8 @@ function PageVisibilityAPI() {
       link="https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API"
       color="violet"
     >
-      <Button
-        icon="list_alt"
-        onClick={() => {
-          openDialog(
-            `- [How to Detect Idle Browser Tabs with the Page Visibility API](https://alligator.io/js/page-visibility-api/)`
-          )
-        }}
+      <DialogTrigger
+        message={`- [How to Detect Idle Browser Tabs with the Page Visibility API](https://alligator.io/js/page-visibility-api/)`}
       />
     </Card>
   )

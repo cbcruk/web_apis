@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { forwardRef } from 'react'
 import { Icon } from './Icon'
 
-type Props = {
+export type Props = {
   icon?: string
 } & JSX.IntrinsicElements['button']
 
