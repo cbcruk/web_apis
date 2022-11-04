@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import { Colors } from '../constants/colors'
 import { Icon } from './Icon'
 
-type Props = {
+export type Props = {
   color?: Colors
   link: string
   icon: string

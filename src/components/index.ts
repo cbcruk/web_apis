@@ -1,5 +1,4 @@
 export * from './Button'
-export * from './Card'
+export * from './CardItem'
 export * from './Dialog'
-export * from './DialogTrigger'
 export * from './Icon'

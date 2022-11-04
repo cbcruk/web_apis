@@ -1,7 +1,7 @@
 import { useDialog } from '../atoms/dialog'
 import { Button, Props as ButtonProps } from './Button'
 
-type Props = {
+export type Props = {
   message: string
 } & Pick<ButtonProps, 'icon'>
 
