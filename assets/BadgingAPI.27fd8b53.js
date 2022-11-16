@@ -1,0 +1,1 @@
+import{C as a}from"./CardItem.7d6da2c7.js";import{j as e}from"./index.8e391039.js";const o={icon:"badge",title:"Badging API",link:"https://developer.mozilla.org/en-US/docs/Web/API/Badging_API",message:"- [Badging for app icons](https://web.dev/badging-api/)"};function g(){return e(a,{color:"lime",...o})}export{g as default};

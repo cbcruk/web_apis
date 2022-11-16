@@ -1,1 +1,0 @@
-import{C as e}from"./CardItem.b7d08876.js";import{j as o}from"./index.1d778b4b.js";const s={icon:"send",title:"Window.postMessage()",link:"https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage",message:""};function r(){return o(e,{color:"amber",...s})}export{r as default};
