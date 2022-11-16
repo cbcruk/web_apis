@@ -5,22 +5,22 @@ import { Resources } from './components/Resources'
 
 const modules = import.meta.glob('./scratch/*.tsx')
 const components = Object.entries(modules).map(([, value]) =>
-  lazy(value as any)
+  lazy(value as any),
 )
 
 function App() {
-  const [dialog, setDialog] = useAtom(dialogAtom)
+  const [, setDialog] = useAtom(dialogAtom)
 
   return (
-    <div className="p-4">
+    <div className="p-4 max-w-3xl mx-auto">
       <div className="flex flex-wrap gap-4">
         <Suspense fallback={null}>
           {components.map((component, index) => {
             return createElement(component, {
               key: index,
               openDialog(value: string) {
-                setDialog(p => ({ ...p, message: value }))
-              }
+                setDialog((p) => ({ ...p, message: value }))
+              },
             })
           })}
         </Suspense>

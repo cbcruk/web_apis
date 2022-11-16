@@ -17,7 +17,7 @@ export function Card({ icon, link, color, title, className, children }: Props) {
 
   return (
     <div
-      className={clsx(['p-4 rounded-xl text-sm', bg, className])}
+      className={clsx(['flex-1 p-4 rounded-xl text-sm', bg, className])}
       style={{
         backgroundColor: `hsl(${random(360, 0)}deg 53% 62%)`,
         backgroundBlendMode: 'screen',
@@ -35,7 +35,7 @@ export function CardTitle({ href, children }: JSX.IntrinsicElements['a']) {
     <a
       href={href}
       target="_blank"
-      className="block underline text-black font-medium"
+      className="block underline text-black font-medium whitespace-nowrap"
     >
       {children}
     </a>
