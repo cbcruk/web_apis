@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { useMemo } from 'react'
 import { Colors } from '../constants/colors'
 import { Icon } from './Icon'
 
@@ -13,13 +14,14 @@ function random(max: number, min: number) {
 }
 
 export function Card({ icon, link, color, title, className, children }: Props) {
-  const bg = `bg-${color}-600`
+  const bg = useMemo(() => `bg-${color}-600`, [])
+  const backgroundColor = useMemo(() => `hsl(${random(360, 0)}deg 53% 62%)`, [])
 
   return (
     <div
       className={clsx(['flex-1 p-4 rounded-xl text-sm', bg, className])}
       style={{
-        backgroundColor: `hsl(${random(360, 0)}deg 53% 62%)`,
+        backgroundColor,
         backgroundBlendMode: 'screen',
       }}
     >
