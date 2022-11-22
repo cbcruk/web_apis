@@ -1,1 +1,0 @@
-import{C as o}from"./CardItem.7d6da2c7.js";import{j as e}from"./index.8e391039.js";const t={icon:"bluetooth",title:"Web Bluetooth API",link:"https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API",message:"- [Bluetooth Anywhere](https://www.voorhoede.nl/en/blog/bluetooth-anywhere/)"};function h(){return e(o,{color:"blue",...t})}export{h as default};
