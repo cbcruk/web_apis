@@ -1,16 +1,22 @@
 import clsx from 'clsx'
+import { classed } from '@tw-classed/react'
 
 type Props = JSX.IntrinsicElements['span']
 
-export function Icon({ className, children }: Props) {
+const defaultIconStyles = {
+  fontVariationSettings: 'FILL 1',
+}
+
+export function Icon({ children }: Props) {
   return (
-    <span
-      className={clsx(['material-symbols-outlined', 'text-sm', className])}
+    <StyledIcon
       style={{
-        fontVariationSettings: 'FILL 1',
+        ...defaultIconStyles,
       }}
     >
       {children}
-    </span>
+    </StyledIcon>
   )
 }
+
+export const StyledIcon = classed.span('material-symbols-outlined text-sm')

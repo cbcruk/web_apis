@@ -1,7 +1,8 @@
 import clsx from 'clsx'
 import { useMemo } from 'react'
+import { classed } from '@tw-classed/react'
 import { Colors } from '../constants/colors'
-import { Icon } from './Icon'
+import { Icon, StyledIcon } from './Icon'
 
 export type Props = {
   color?: Colors
@@ -25,7 +26,7 @@ export function Card({ icon, link, color, title, className, children }: Props) {
         backgroundBlendMode: 'screen',
       }}
     >
-      <Icon className="text-black text-lg">{icon}</Icon>
+      <StyledCardIcon>{icon}</StyledCardIcon>
       <CardTitle href={link}>{title}</CardTitle>
       <CardBody>{children}</CardBody>
     </div>
@@ -34,16 +35,20 @@ export function Card({ icon, link, color, title, className, children }: Props) {
 
 export function CardTitle({ href, children }: JSX.IntrinsicElements['a']) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      className="block underline text-black font-medium whitespace-nowrap"
-    >
+    <StyledCardTitle href={href} target="_blank">
       {children}
-    </a>
+    </StyledCardTitle>
   )
 }
 
 export function CardBody({ children }: JSX.IntrinsicElements['div']) {
-  return <div className="flex gap-2 mt-4">{children}</div>
+  return <StyledCardBody>{children}</StyledCardBody>
 }
+
+const StyledCardTitle = classed.a(
+  'block underline text-black font-medium whitespace-nowrap',
+)
+
+const StyledCardBody = classed.div('flex gap-2 mt-4')
+
+const StyledCardIcon = classed(StyledIcon, 'text-black text-lg')

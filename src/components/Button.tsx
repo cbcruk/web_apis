@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { forwardRef } from 'react'
+import { classed } from '@tw-classed/react'
 import { Icon } from './Icon'
 
 export type Props = {
@@ -9,19 +10,16 @@ export type Props = {
 type Ref = HTMLButtonElement
 
 export const Button = forwardRef<Ref, Props>(
-  ({ className, icon, children, ...props }, ref) => {
+  ({ icon, children, ...props }, ref) => {
     return (
-      <button
-        ref={ref}
-        className={clsx([
-          'inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-300/60',
-          className,
-        ])}
-        {...props}
-      >
+      <StyledButton ref={ref} {...props}>
         {children}
         {icon && <Icon className="text-black">{icon}</Icon>}
-      </button>
+      </StyledButton>
     )
-  }
+  },
+)
+
+export const StyledButton = classed.button(
+  'inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-300/60',
 )
