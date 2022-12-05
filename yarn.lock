@@ -333,6 +333,18 @@
     "@preact/signals-core" "^1.2.2"
     use-sync-external-store "^1.2.0"
 
+"@tw-classed/core@1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@tw-classed/core/-/core-1.2.5.tgz#5755350007fa8c7b4cf726bf9f682f0053a5c884"
+  integrity sha512-RFenh2zG9vuAfVIwo1BwzF6ca+g3ZcwPcm7XU8HEMWy5S3oxy0RMcqurVo9HWZUPJlECnj3z0/fjeMSvJlOxrA==
+
+"@tw-classed/react@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@tw-classed/react/-/react-1.2.5.tgz#8d7b9a662f551e4df1bb2c202b50637179e268c1"
+  integrity sha512-frDREyT2vfwJKXcVCtKj9IOGQyrDx4lFQfVMuT/6vHWoz5KmU4+aWQSxh51/6thbQMsm2JCC5DOuiuWiLypeGg==
+  dependencies:
+    "@tw-classed/core" "1.2.5"
+
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
