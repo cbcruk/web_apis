@@ -1,4 +1,4 @@
-import { atom, useAtom } from "jotai";
+import { atom, useAtom } from 'jotai'
 
 export const dialogAtom = atom({
   open: false,
@@ -10,10 +10,10 @@ export function useDialog() {
 
   return {
     openDialog(value: string) {
-      setDialog(p => ({
+      setDialog((p) => ({
         ...p,
-        message: value
+        message: value,
       }))
-    }
+    },
   }
 }

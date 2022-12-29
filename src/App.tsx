@@ -1,6 +1,7 @@
 import { useAtom } from 'jotai'
 import { createElement, lazy, Suspense } from 'react'
 import { dialogAtom } from './atoms/dialog'
+import { fontsAtom } from './atoms/fonts'
 import { Resources } from './components/Resources'
 
 const modules = import.meta.glob('./scratch/*.tsx')
@@ -10,6 +11,11 @@ const components = Object.entries(modules).map(([, value]) =>
 
 function App() {
   const [, setDialog] = useAtom(dialogAtom)
+  const [loaded] = useAtom(fontsAtom)
+
+  if (!loaded) {
+    return null
+  }
 
   return (
     <div className="p-4 max-w-3xl mx-auto">
